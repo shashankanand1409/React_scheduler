@@ -1,0 +1,123 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.dashboard-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #18191a;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.25);
+}
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+}
+.dashboard-date {
+  font-size: 1.1rem;
+  color: #b0b3b8;
+  margin-top: 4px;
+}
+.dashboard-section {
+  background: #242526;
+  border-radius: 12px;
+  padding: 20px 24px 16px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  text-align: left;
+}
+.dashboard-section h2 {
+  margin-top: 0;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.dashboard-days {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.daily-task-card {
+  background: #242526;
+  border-radius: 12px;
+  padding: 16px 18px 12px 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  min-height: 140px;
+}
+
+input[type="text"] {
+  background: #18191a;
+  color: #fff;
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 1em;
+}
+
+input[type="text"]:focus {
+  outline: 2px solid #646cff;
+}
+
+button {
+  background: #393e46;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #646cff;
+}
+
+/* Add more styles for cards, inputs, and buttons as needed */

@@ -1,0 +1,84 @@
+✅ Instructions to Install All Dependencies & Final File Structure
+
+📦 Step-by-Step Setup for React App using Vite
+
+1. Create a new Vite + React project
+
+npm create vite@latest personal-dashboard -- --template react
+cd personal-dashboard
+
+2. Install all dependencies
+
+npm install
+
+3. Install Tailwind CSS for styling (optional but recommended)
+
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+
+4. Configure Tailwind (in tailwind.config.js)
+
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+
+5. Add Tailwind directives to src/index.css
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+6. Start development server
+
+npm run dev
+
+
+⸻
+
+📁 Final File Structure
+
+personal-dashboard/
+├── index.html
+├── package.json
+├── tailwind.config.js
+├── postcss.config.js
+├── vite.config.js
+├── public/
+│   └── ... (assets like images if needed)
+├── src/
+│   ├── App.jsx              # Main layout and routing
+│   ├── index.css            # Global styles with Tailwind
+│   ├── main.jsx             # ReactDOM entry point
+│   └── components/
+│       ├── Header.jsx       # Displays the title and date
+│       ├── WeeklyPriorities.jsx   # Priority list with input
+│       ├── HabitTracker.jsx       # Habit tracker grid
+│       └── DailyTaskCard.jsx      # Cards for Mon-Sun tasks
+└── README.md
+
+
+⸻
+
+✅ Optional Libraries
+
+You may choose to install the following:
+
+npm install date-fns        # For date formatting
+npm install uuid            # To generate unique IDs for tasks
+
+
+⸻
+
+🧠 Notes
+	•	All components should use useState for managing internal data.
+	•	Use localStorage or a backend to persist the data.
+	•	Add input fields and buttons in each section to match the design.
+	•	For dark mode look, configure Tailwind or use a dark class theme.
