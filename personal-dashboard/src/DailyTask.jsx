@@ -18,7 +18,7 @@ function DailyTask({ day }) {
   return (
     <div className="daily-task-card">
       <h3 style={{ color: '#fff', margin: '10px 0 20px 0' }}>{day}</h3>
-      <div style={{className: 'inputbox-daily-task', display: 'flex', gap: 6 }}>
+      <div style={{className: 'inputbox-daily-task', display: 'flex', gap: 8 }}>
         <input
           className="inputtext-daily-task"
           type="text"
@@ -35,7 +35,7 @@ function DailyTask({ day }) {
           <li key={i} className = "new-item-added" style={{ color: '#fff', marginBottom: 5, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
             <span className='daily-task-content' title={t}>{t}</span>
             <div style={{ display: 'flex', alignItems: 'center'}}>
-              <input type="checkbox" className = "checkbox-daily-task" style={{ marginRight: 8 }} />
+              <input type="checkbox" className = "checkbox-daily-task" style={{ marginRight: 10, cursor: 'pointer'}} />
               <button
                 onClick={() => handleDelete(i)}
                 style={{ padding: '4px 10px', borderRadius: 6, background: '#c0392b', color: '#fff', border: 'none', cursor: 'pointer' }}

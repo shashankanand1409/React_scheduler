@@ -72,6 +72,7 @@ function HabitTracker() {
                       type="checkbox"
                       checked={!!checks[key]}
                       onChange={() => toggleCheck(habitIdx, dayIdx)}
+                      style={{ cursor: 'pointer' }}
                     />
                   </td>
                 );
