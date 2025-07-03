@@ -35,7 +35,7 @@ function HabitTracker() {
   };
 
   return (
-    <div>
+    <div class = "habit-tracker-container" style={{columnGap: "20px", color: '#fff' }}>
       <div style={{ display: 'flex', gap: 8, marginBottom: 25 }}>
         <input
           type="text"
@@ -46,7 +46,7 @@ function HabitTracker() {
         />
         <button onClick={handleAdd}>Add</button>
       </div>
-      <table style={{ width: '100%', color: '#fff', borderCollapse: 'collapse' }}>
+      <table className="habit-tracker-table" style={{ width: '100%', color: '#fff', borderCollapse: 'collapse'}}>
         <thead>
           <tr>
             <th style={{ textAlign: 'center', padding: '4px 8px' }}>Habit</th>
@@ -55,14 +55,14 @@ function HabitTracker() {
             ))}
             {habits.length > 0 && (
               <th style={{ padding: '4px 8px', alignItems: 'center', textAlign: 'center' }}>
-                <button onClick={handleDeleteAll} style={{ padding: '4px 10px', borderRadius: 6, background: '#393e46', color: '#fff', border: 'none', cursor: 'pointer' }}>Delete All</button>
+                <button onClick={handleDeleteAll} style={{padding: '4px 10px', borderRadius: 6, background: '#393e46', color: '#fff', border: 'none', cursor: 'pointer' }}>Delete All</button>
               </th>
             )}
           </tr>
         </thead>
         <tbody>
           {habits.map((habit, habitIdx) => (
-            <tr key={habitIdx}>
+            <tr key={habitIdx} className='habit-tracker-row'>
               <td style={{ padding: '4px 8px', textAlign: 'center' }}>{habit}</td>
               {days.map((_, dayIdx) => {
                 const key = `${habitIdx}-${dayIdx}`;
@@ -76,10 +76,12 @@ function HabitTracker() {
                   </td>
                 );
               })}
-              <td style={{ textAlign: 'center', padding: '4px 8px', width: '87.5938px' }}>
-                <button onClick={() => handleDelete(habitIdx)} style={{ padding: '4px 10px', borderRadius: 6, background: '#c0392b', color: '#fff', border: 'none', cursor: 'pointer' }}>Delete</button>
-              </td>
-            </tr>
+               
+                <td style={{ textAlign: 'center', padding: '4px 8px', width: '87.5938px', marginTop: '20px' }}>
+                  <button onClick={() => handleDelete(habitIdx)} style={{width: '87.5938px', padding: '4px 10px', borderRadius: 6, background: '#c0392b', color: '#fff', border: 'none', cursor: 'pointer' }}>Delete</button>
+                </td> 
+              </tr>
+           
           ))}
         </tbody>
       </table>

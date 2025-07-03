@@ -143,6 +143,26 @@ a:hover {
   white-space: normal;
   display: inline-block;
 }
+
+.habit-tracker-row {
+  height: 16px;           /* Increase as needed */
+}
+
+.habit-tracker-row:not(:last-child) {
+  border-bottom: 12px solid transparent; /* Creates a gap between rows */
+}
+
+.habit-tracker-table thead {
+  border-bottom: 16px solid transparent; /* creates a gap below the header */
+}
+
+.habit-tracker-table tbody tr:first-child {
+  border-top: 16px solid transparent; /* creates a gap above the first row */
+}
+
+.habit-tracker-table tbody tr:first-child td {
+  padding-top: 16px; /* increases space above the first row */
+}
 /*
 style={{ flex: 1, padding: 7, borderRadius: 6,
    border: '1px solid #444', background: '#18191a', color: '#fff' }}
