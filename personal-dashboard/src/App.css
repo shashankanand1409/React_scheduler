@@ -42,7 +42,7 @@
 }
 
 .dashboard-container {
-  max-width: 900px;
+  max-width: 700px;
   margin: 40px auto;
   padding: 24px;
   background: #18191a;
@@ -79,16 +79,18 @@
 }
 .dashboard-days {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  column-gap: 18px;
 }
 
 .daily-task-card {
   background: #242526;
   border-radius: 12px;
-  padding: 16px 18px 12px 18px;
+  padding: 16px 10px 12px 18px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   min-height: 140px;
+  margin-bottom: 16px;
 }
 
 input[type="text"] {
@@ -119,5 +121,6 @@ button {
 button:hover {
   background: #646cff;
 }
+
 
 /* Add more styles for cards, inputs, and buttons as needed */

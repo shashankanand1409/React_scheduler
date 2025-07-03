@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './index.css';
 import WeeklyPriorities from './WeeklyPriorities';
 import HabitTracker from './HabitTracker';
 import DailyTask from './DailyTask';
@@ -10,7 +11,7 @@ function App() {
   const formattedDate = today.toLocaleDateString(undefined, options);
 
   return (
-    <div className="dashboard-container">
+    <div className="dashboard-container flex">
       <header className="dashboard-header">
         <h1>My Personal Dashboard</h1>
         <div className="dashboard-date">{formattedDate}</div>

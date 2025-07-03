@@ -14,6 +14,21 @@ function HabitTracker() {
     }
   };
 
+  const handleDelete = (habitIdx) => {
+    setHabits(habits.filter((_, idx) => idx !== habitIdx));
+    // Remove checks for this habit
+    const newChecks = { ...checks };
+    days.forEach((_, dayIdx) => {
+      delete newChecks[`${habitIdx}-${dayIdx}`];
+    });
+    setChecks(newChecks);
+  };
+
+  const handleDeleteAll = () => {
+    setHabits([]);
+    setChecks({});
+  };
+
   const toggleCheck = (habitIdx, dayIdx) => {
     const key = `${habitIdx}-${dayIdx}`;
     setChecks({ ...checks, [key]: !checks[key] });
@@ -21,7 +36,7 @@ function HabitTracker() {
 
   return (
     <div>
-      <div style={{ display: 'flex', gap: 8, marginBottom: 12 }}>
+      <div style={{ display: 'flex', gap: 8, marginBottom: 25 }}>
         <input
           type="text"
           placeholder="Add a new habit..."
@@ -34,20 +49,25 @@ function HabitTracker() {
       <table style={{ width: '100%', color: '#fff', borderCollapse: 'collapse' }}>
         <thead>
           <tr>
-            <th style={{ textAlign: 'left', padding: '4px 8px' }}>Habit</th>
+            <th style={{ textAlign: 'center', padding: '4px 8px' }}>Habit</th>
             {days.map((d, i) => (
-              <th key={i} style={{ padding: '4px 8px' }}>{d}</th>
+              <th key={i} style={{ padding: '4px 8px', textAlign: 'center'}}>{d}</th>
             ))}
+            {habits.length > 0 && (
+              <th style={{ padding: '4px 8px', alignItems: 'center', textAlign: 'center' }}>
+                <button onClick={handleDeleteAll} style={{ padding: '4px 10px', borderRadius: 6, background: '#393e46', color: '#fff', border: 'none', cursor: 'pointer' }}>Delete All</button>
+              </th>
+            )}
           </tr>
         </thead>
         <tbody>
           {habits.map((habit, habitIdx) => (
             <tr key={habitIdx}>
-              <td style={{ padding: '4px 8px' }}>{habit}</td>
+              <td style={{ padding: '4px 8px', textAlign: 'center' }}>{habit}</td>
               {days.map((_, dayIdx) => {
                 const key = `${habitIdx}-${dayIdx}`;
                 return (
-                  <td key={dayIdx} style={{ textAlign: 'center', padding: '4px 8px' }}>
+                  <td key={dayIdx} style={{ textAlign: 'center', padding: '4px 8px', maxWidth:'130px' }}>
                     <input
                       type="checkbox"
                       checked={!!checks[key]}
@@ -56,6 +76,9 @@ function HabitTracker() {
                   </td>
                 );
               })}
+              <td style={{ textAlign: 'center', padding: '4px 8px', width: '87.5938px' }}>
+                <button onClick={() => handleDelete(habitIdx)} style={{ padding: '4px 10px', borderRadius: 6, background: '#c0392b', color: '#fff', border: 'none', cursor: 'pointer' }}>Delete</button>
+              </td>
             </tr>
           ))}
         </tbody>
